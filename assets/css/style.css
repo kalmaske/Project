@@ -1,10 +1,7 @@
-.carousel-item{
-	width:250px;
-	height:250px;
-}
+body{
+	text-align: center;
 
-.container{
-	font-family: 'Lemon', cursive;
+
 }
 
 .jumbotron{
@@ -12,4 +9,32 @@
 	font-weight: bold;
 	text-shadow: 2px 2px;
 	text-align: center;
+	background-color: #26a69a;
 }
+
+
+#panel-heading{
+  background-color: #26a69a;
+  color:white;
+  text-align: center;
+}
+
+
+.carousel{
+	display: block;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+.carousel-item{
+	width:250px;
+	height:250px;
+	margin-right: auto;
+	margin left: auto;
+}
+
+.container{
+
+	font-family: 'Lemon', cursive;
+}
+
