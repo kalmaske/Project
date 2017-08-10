@@ -1,38 +1,40 @@
-body{
-	text-align: center;
-
-
+body {
+    text-align: center;
 }
 
-
-
-
-.nav-wrapper{
-  background-color: #26a69a;
-  color:white;
-  text-align: center;
-  font-size:30px;
+.collection-header,
+.collection-with-heade {
+    background-color: #26a69a;
+    color: white;
+    text-align: center;
+    font-size: 30px;
 }
 
-.brand-logo{
-	font-size: 25px;
+.nav-wrapper {
+    background-color: #26a69a;
+    color: white;
+    text-align: center;
+    font-size: 35px;
 }
 
-.carousel{
-	display: block;
-	margin-left:auto;
-	margin-right: auto;
+.brand-logo {
+    font-size: 20px;
 }
 
-.carousel-item{
-	width:250px;
-	height:250px;
-	margin-right: auto;
-	margin left: auto;
+.carousel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.container{
-
-	font-family: 'Lemon', cursive;
+.carousel-item {
+    width: 250px;
+    height: 250px;
+    margin-right: auto;
+    margin left: auto;
 }
 
+.container {
+
+    font-family: 'Lemon', cursive;
+}
