@@ -4,24 +4,18 @@ body{
 
 }
 
-.jumbotron{
-	font-size: 40px;
-	font-weight: bold;
-	text-shadow: 2px 2px;
-	text-align: center;
-	background-color: #26a69a;
-}
+
 
 
 .nav-wrapper{
   background-color: #26a69a;
   color:white;
   text-align: center;
-  font-size:18px;
+  font-size:30px;
 }
 
 .brand-logo{
-	font-size: 18px;
+	font-size: 25px;
 }
 
 .carousel{
