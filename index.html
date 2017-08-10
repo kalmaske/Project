@@ -1,126 +1,88 @@
 <!DOCTYPE html>
  <html lang="en">
  <head>
- 	<meta charset="UTF-8">
- 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- reset -->
-	<link rel="stylesheet" href="assets/css/reset.css">
-	
-	<!-- style.css -->
-	<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
 
-	  <!-- Compiled and minified CSS -->
+      <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <!-- javascript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
-	<!-- jQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<!-- javascript -->
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
-
-<!-- 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-
-	<!-- fire base -->
-	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
-
-
-   
- 	  <title>Project</title>
+        <!-- style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+<!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+    <!-- fire base -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
+      <title>Project</title>
  </head>
  <body>
- 	<div class = "container">
- 		<div class = "row">
- 			<div class = "col-xs-12">
- 				<div class = "jumbotron">
- 				<h1></i> Comic Collector </h1>
- 					
- 				</div> <!-- end jumbotron -->
- 				
- 			</div> <!-- end col XS 12 -->
- 			
- 		</div> <!-- end row -->
-		
-		<div class="row">
-	 		<div class="col-xs-12">
-	 			<div class = "panel panel-default">
-	 				<div class = "panel-heading" id = "panel-heading">Click on the character that you like or search for a new character.</div> <!-- end panel heading -->
-	 				<div class = "panel-body">
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-xs-12">
+                <div class = "jumbotron">
+                <h1></i> Comic Collector </h1>
+                </div> <!-- end jumbotron -->
+            </div> <!-- end col XS 12 -->
+        </div> <!-- end row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class = "collection">
 
-	 					<div class="carousel">
-						    <a class="carousel-item" href="#one!"><img src="./assets/images/spiderman.png" alt="spiderman" </a>
-						    <a class="carousel-item" href="#two!"><img src="assets/images/batman.png" alt="batman" height="300" width="300"></a>
-						    <a class="carousel-item" href="#three!"><img src="assets/images/captinamerica.png" alt="captinamerica" height="300" width="300"></a>
-						    <a class="carousel-item" href="#four!"><img src="assets/images/blackwidow.png" alt="blackwidow" height="300" width="300"></a>
-						    <a class="carousel-item" href="#five!"><img src="assets/images/deadpool.png" alt="deadpool" height="300" width="300"></a>
-						    <a class="carousel-item" href="#six!"><img src="assets/images/hulk.png" alt="hulk" height="300" width="300"></a>
-
-  						</div> <!-- end carosel -->
-  						<br><br>
-
-  						<div class="form-group">
-	 						<label>Search for a new character </label>
-	 						<input class="form-control" id="search-button">
-	 					</div><!-- end form group -->
-	 					
-	 					<button type="button" class="btn btn-default" id="submit-button"> Search</button>
-	 						
-	 				</div> <!-- end panel body -->
-	 				
-	 			</div> <!-- end panel panel default -->
-	 				
-	 		</div><!-- end col XS 12 -->
- 		</div> <!-- end row -->
- 	
-
-
- 
- 		<div class = "row">
- 			<div class = "col-xs-6">
- 				<div class = "panel panel-default">
- 					<div class = "panel-heading" id = "panel-heading">character's latest comic books </div> <!-- end panel heading -->
- 
- 					<div class = "panel-body">
- 						
- 						
- 					</div> <!-- end panel body -->
- 				
- 				</div> <!-- end panel panel default -->
- 				
- 			</div> <!-- end col XS 12 -->
-
- 			<div class = "col-xs-6">
- 				<div class = "panel panel-default">
- 					<div class = "panel-heading" id = "panel-heading">Bookstores </div> <!-- end panel heading -->
- 
- 					<div class = "panel-body">
- 						
- 						
- 					</div> <!-- end panel body -->
- 				
- 				</div> <!-- end panel panel default -->
- 				
- 			</div> <!-- end col XS 12 -->
- 			
- 		</div> <!-- end row
- 		 -->
- 	</div> <!-- end container -->
- 
- 
- 	
-
-
- 	
- 	
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
-
+                <nav>
+				  <div class="nav-wrapper">
+				    <a href="" class="brand-logo">Click on the character that you like or search for a new character.</a>
+				    
+				  </div>
+				</nav>
+                    <!-- <div class = "panel-heading" id = "panel-heading">Click on the character that you like or search for a new character.</div> <end panel heading -->
+                    <div class = "panel-body">
+                        <div class="carousel">
+                            <a class="carousel-item" href="#one!"><img src="./assets/images/spiderman.png" alt="spiderman" </a>
+                            <a class="carousel-item" href="#two!"><img src="assets/images/batman.png" alt="batman" height="300" width="300"></a>
+                            <a class="carousel-item" href="#three!"><img src="assets/images/captinamerica.png" alt="captinamerica" height="300" width="300"></a>
+                            <a class="carousel-item" href="#four!"><img src="assets/images/blackwidow.png" alt="blackwidow" height="300" width="300"></a>
+                            <a class="carousel-item" href="#five!"><img src="assets/images/deadpool.png" alt="deadpool" height="300" width="300"></a>
+                            <a class="carousel-item" href="#six!"><img src="assets/images/hulk.png" alt="hulk" height="300" width="300"></a>
+                        </div> <!-- end carosel -->
+                        <br><br>
+                        <div class="form-group">
+                            <label>Search for a new character </label>
+                            <input class="form-control" id="search-button">
+                        </div><!-- end form group -->
+                        <button type="button" class="btn btn-default" id="submit-button"> Search</button>
+                    </div> <!-- end panel body -->
+                </div> <!-- end panel panel default -->
+            </div><!-- end col XS 12 -->
+        </div> <!-- end row -->
+        <div class = "row">
+            <div class = "col-xs-6">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading" id = "panel-heading">character's latest comic books </div> <!-- end panel heading -->
+                    <div class = "panel-body">
+                    </div> <!-- end panel body -->
+                </div> <!-- end panel panel default -->
+            </div> <!-- end col XS 12 -->
+            <div class = "col-xs-6">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading" id = "panel-heading">Bookstores </div> <!-- end panel heading -->
+                    <div class = "panel-body">
+                    </div> <!-- end panel body -->
+                </div> <!-- end panel panel default -->
+            </div> <!-- end col XS 12 -->
+        </div> <!-- end row
+         -->
+    </div> <!-- end container -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
  </body>
- </html> 
+ </html>

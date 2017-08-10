@@ -13,12 +13,16 @@ body{
 }
 
 
-#panel-heading{
+.nav-wrapper{
   background-color: #26a69a;
   color:white;
   text-align: center;
+  font-size:18px;
 }
 
+.brand-logo{
+	font-size: 18px;
+}
 
 .carousel{
 	display: block;
