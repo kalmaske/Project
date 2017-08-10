@@ -1,0 +1,15 @@
+.carousel-item{
+	width:250px;
+	height:250px;
+}
+
+.container{
+	font-family: 'Lemon', cursive;
+}
+
+.jumbotron{
+	font-size: 40px;
+	font-weight: bold;
+	text-shadow: 2px 2px;
+	text-align: center;
+}
