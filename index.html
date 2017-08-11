@@ -15,12 +15,28 @@
     <script src="assets/javascript/md5.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <!-- javascript -->
-
+    <!-- map script needs to be in index.html -->
+	<script>
+		function initMap() {
+        var comicStore = {lat: 35.212614, lng:   -80.817919};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: comicStore,
+          
+        });
+        var marker = new google.maps.Marker({
+          position: comicStore,
+          map: map
+        });
+      }
+	</script>
     <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&callback=initMap">
     </script>
+
+    <!-- fire base -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 
@@ -29,9 +45,6 @@
     <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 
-    <!-- fire base -->
-   
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
     <title>Project</title>
