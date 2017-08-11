@@ -1,6 +1,9 @@
 // js for code involving marvel
 //
 // Initialize Firebase
+
+$(document).ready(function() {
+
 var config = {
   apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
   authDomain: "awsomeproject-a2f25.firebaseapp.com",
@@ -28,25 +31,32 @@ var hash = "";
 
 //this fires when use clicks on image in carousel
 
-// $(document).on("click", "", function() {
+$(".somefunction").on("click", "", function() {
 
 // var marvelChar = $(this).attr("id");
 
-var marvelChar = "thor";
+var marvelChar = ("thor").split(" ").join("+").toLowerCase();
 console.log(marvelChar);
 
 //call function to get unique character id
 // true means to get comics also
 var characterID = getCharacterID(marvelChar, true)
+})
 
 //This occurs when user enters search criteria for new character
-$("#somebutton").on("click", function() {
+$(".carousel-item").on("click", function() {
 
+  //check to see if active class was clicked
+  var charClass = ($(this).attr("class").split(' ')[1]);
 
+  if (charClass === "active") {
 
+    $(".comics").empty();
+    var clickedID = $(this).attr("id");
+    getComics(clickedID);
 
-
-
+  }
+ 
 })
 
 //get unique character id
@@ -71,6 +81,7 @@ function getCharacterID (character, comicsNeeded) {
     method: "GET"
   }).done(function(response) {
 
+
     console.log(response);
 
     var charCount = response.data.count;
@@ -80,6 +91,7 @@ function getCharacterID (character, comicsNeeded) {
     if (charCount === 1) {
       // we know there is only 1 entry so just use index 0 to store unique id
       charID = response.data.results[0].id;
+      console.log(response.data.results[0].id);
       //do we need to get comics also?
       if (comicsNeeded) {
         getComics(charID);
@@ -155,7 +167,7 @@ function getComics(characterID) {
         comicImg.attr("alt", "comic book image");
         imgDiv.append(comicImg); 
     
-        $(".buttons").append(imgDiv);
+        $(".comics").append(imgDiv);
         
       }
 
@@ -165,11 +177,13 @@ function getComics(characterID) {
       return;
 
     }
-    console.log(subresponse.data.results[0].title);
+    //console.log(subresponse.data.results[0].title);
 
-    console.log(displayImg);
-    console.log(subresponse.data.results[0].description);
+    //console.log(displayImg);
+    //console.log(subresponse.data.results[0].description);
 
   }) //----------END OF SECOND AJAX CALL  
 
 }
+
+})
