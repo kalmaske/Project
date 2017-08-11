@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-color: #FFFFE5;
 }
 
 .collection-header,
@@ -37,4 +38,12 @@ body {
 .container {
 
     font-family: 'Lemon', cursive;
+}
+
+.row{
+	text-align: center;
+}
+
+.active{
+	text-align: center;
 }
