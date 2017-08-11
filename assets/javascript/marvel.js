@@ -21,76 +21,113 @@ firebase.initializeApp(config);
 var publicKey = "7787f189e8742fa9621f551458ef4c36";
 var privateKey = "2efe1197ea45941b1e0263d5fef30b7b6c9b10bb"
 
-//  create a hash tag for Marvel api - GRRRRRR!
-var ts = String(new Date().getTime());
-var hash = md5(ts + privateKey + publicKey);
+//  vars for hash tag for Marvel api - GRRRRRR!
+var ts = "";
+var hash = "";
 
-//this fires when use clicks on image
+//this fires when use clicks on image in carousel
+
 // $(document).on("click", "", function() {
 
 // var marvelChar = $(this).attr("id");
 
-var marvelChar = "Thor";
+var marvelChar = "thor";
 console.log(marvelChar);
 
-// create Marvel api query
-var queryURL = "http://gateway.marvel.com/v1/public/" +
-  "characters?name=" + marvelChar +
-  "&apikey=" + publicKey +
-  "&ts=" + ts +
-  "&hash=" + hash;
+//call function to get unique character id
+// true means to get comics also
+var characterID = getCharacterID(marvelChar, true)
 
-//  Make the first call to get unique character id
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).done(function(response) {
+//This occurs when user enters search criteria for new character
+$("#somebutton").on("click", function() {
 
-  var charCount = response.data.count;
 
-  //1 means a good value was found - can only process 1 unique id per char
 
-  if (charCount !== 1) {
-    console.log("error routine goes here")
 
-  } else {
 
-    // we know there is only 1 entry so just use index 0 to store unique id
-    var charID = response.data.results[0].id;
 
-    //create date range for comics query - 3 months
-    var fromDate = moment().subtract(3, "months").format("YYYY-MM-DD");
-    var toDate = moment().format("YYYY-MM-DD");
-    var dateRange = fromDate + "%2C" + toDate;
+})
 
-    //get a new hash tag
-    ts = String(new Date().getTime());
-    hash = md5(ts + privateKey + publicKey);
+//get unique character id
+function getCharacterID (character, comicsNeeded) {
 
-    var subqueryURL = "https://gateway.marvel.com/v1/public/characters/" +
-      charID +
-      "/comics?" +
-      "dateRange=" + dateRange +
-      "&orderBy=-onsaleDate" +
-      "&apikey=" + publicKey +
-      "&ts=" + ts +
-      "&hash=" + hash;
+  console.log("character " +character);
+  var charID = "";
+  //  create a hash tag for Marvel api - GRRRRRR!
+  ts = String(new Date().getTime());
+  hash = md5(ts + privateKey + publicKey);
 
-    //make second call to get array of recent comics
-    $.ajax({
-      url: subqueryURL,
-      method: "GET"
-    }).done(function(subresponse) {
+  // create Marvel api query
+  var queryURL = "http://gateway.marvel.com/v1/public/" +
+    "characters?name=" + character +
+    "&apikey=" + publicKey +
+    "&ts=" + ts +
+    "&hash=" + hash;
 
-      console.log(subresponse);
+  //  Make the first call to get unique character id
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).done(function(response) {
 
-      console.log(subresponse.data.results[0].title);
-      var path = subresponse.data.results[0].images[0].path;
-      var ext = subresponse.data.results[0].images[0].extension;
-      var displayImg = path + "/portrait_large." + ext;
-      console.log(displayImg);
-      console.log(subresponse.data.results[0].description);
+    console.log(response);
 
-    }) //----------END OF SECOND AJAX CALL
-  } //----------END OF IF STATEMENT
-}) //----------END OF ID AJAX CALL 
+    var charCount = response.data.count;
+
+    //1 means a good value was found - can only process 1 unique id per char
+
+    if (charCount === 1) {
+      // we know there is only 1 entry so just use index 0 to store unique id
+      charID = response.data.results[0].id;
+      //do we need to get comics also?
+      if (comicsNeeded) {
+        getComics(charID);
+      }
+
+    }//----------END OF IF STATEMENT
+
+    return charID;
+
+  }) //----------END OF ID AJAX CALL 
+
+}
+
+//get list of comics from Marvel
+function getComics(characterID) {
+
+  //create date range for comics query - 3 months
+  var fromDate = moment().subtract(3, "months").format("YYYY-MM-DD");
+  var toDate = moment().format("YYYY-MM-DD");
+  var dateRange = fromDate + "%2C" + toDate;
+
+  //get a new hash tag
+  ts = String(new Date().getTime());
+  hash = md5(ts + privateKey + publicKey);
+
+  var subqueryURL = "https://gateway.marvel.com/v1/public/characters/" +
+    characterID +
+    "/comics?" +
+    "dateRange=" + dateRange +
+    "&orderBy=-onsaleDate" +
+    "&apikey=" + publicKey +
+    "&ts=" + ts +
+    "&hash=" + hash;
+
+  //make second call to get array of recent comics
+  $.ajax({
+    url: subqueryURL,
+    method: "GET"
+  }).done(function(subresponse) {
+
+    console.log(subresponse);
+
+    console.log(subresponse.data.results[0].title);
+    var path = subresponse.data.results[0].images[0].path;
+    var ext = subresponse.data.results[0].images[0].extension;
+    var displayImg = path + "/portrait_large." + ext;
+    console.log(displayImg);
+    console.log(subresponse.data.results[0].description);
+
+  }) //----------END OF SECOND AJAX CALL  
+
+}
