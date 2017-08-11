@@ -17,6 +17,7 @@ firebase.initializeApp(config);
 //---------- VARIABLES ----------
 //---------- VARIABLES ----------
 
+var maxComics = 8;
 //  Marvel api keys
 var publicKey = "7787f189e8742fa9621f551458ef4c36";
 var privateKey = "2efe1197ea45941b1e0263d5fef30b7b6c9b10bb"
@@ -121,10 +122,51 @@ function getComics(characterID) {
 
     console.log(subresponse);
 
+    var comicCount = subresponse.data.count;
+    var loopCount = comicCount;
+
+    if (comicCount === 0) {
+      console.log("NO COMICS AVAILABLE")
+      return;
+    }
+
+
+    //Does the results key exist
+    if (subresponse.data.hasOwnProperty("results")) {
+
+      //if more than comic limit is returned, set to default, else use returned count
+      if (comicCount > maxComics) {
+        comicCount = maxComics;
+      }
+
+      for (var i = 0; i < comicCount; i++) {
+
+        var path = subresponse.data.results[i].thumbnail.path;
+        var ext = subresponse.data.results[i].thumbnail.extension;
+        var displayImg = path + "/portrait_large." + ext;
+        
+        var imgDiv = $("<div>");
+        // var ratingTxt = $("<p>");
+        // ratingTxt.addClass("ratingTxt");
+        // ratingTxt.html("Rating: " + rating + "<br>"); 
+
+        var comicImg = $("<img>").attr("src", displayImg);
+        comicImg.addClass("comicImg");
+        comicImg.attr("alt", "comic book image");
+        imgDiv.append(comicImg); 
+    
+        $(".buttons").append(imgDiv);
+        
+      }
+
+    } else {
+
+      console.log("error - no results were found");
+      return;
+
+    }
     console.log(subresponse.data.results[0].title);
-    var path = subresponse.data.results[0].images[0].path;
-    var ext = subresponse.data.results[0].images[0].extension;
-    var displayImg = path + "/portrait_large." + ext;
+
     console.log(displayImg);
     console.log(subresponse.data.results[0].description);
 
