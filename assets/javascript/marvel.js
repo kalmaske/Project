@@ -1,6 +1,9 @@
 // js for code involving marvel
 //
 // Initialize Firebase
+
+$(document).ready(function() {
+
 var config = {
   apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
   authDomain: "awsomeproject-a2f25.firebaseapp.com",
@@ -18,6 +21,8 @@ firebase.initializeApp(config);
 //---------- VARIABLES ----------
 
 var maxComics = 8;
+var characters = [];
+
 //  Marvel api keys
 var publicKey = "7787f189e8742fa9621f551458ef4c36";
 var privateKey = "2efe1197ea45941b1e0263d5fef30b7b6c9b10bb"
@@ -28,26 +33,37 @@ var hash = "";
 
 //this fires when use clicks on image in carousel
 
-// $(document).on("click", "", function() {
+$(".somefunction").on("click", "", function() {
 
 // var marvelChar = $(this).attr("id");
 
-var marvelChar = "thor";
+var marvelChar = ("thor").split(" ").join("+").toLowerCase();
 console.log(marvelChar);
 
 //call function to get unique character id
 // true means to get comics also
 var characterID = getCharacterID(marvelChar, true)
+})
 
 //This occurs when user enters search criteria for new character
-$("#somebutton").on("click", function() {
+$(".carousel-item").on("click", function() {
 
+  //check to see if active class was clicked
+  var charClass = ($(this).attr("class").split(' ')[1]);
 
+  if (charClass === "active") {
 
+    $(".comics").empty();
+    var clickedID = $(this).attr("id");
+    getComics(clickedID);
 
+  }
+ 
+}) //----------END OF CAROUSEL
 
-
-})
+//---------- FUNCTIONS ----------
+//---------- FUNCTIONS ----------
+//---------- FUNCTIONS ----------
 
 //get unique character id
 function getCharacterID (character, comicsNeeded) {
@@ -71,6 +87,7 @@ function getCharacterID (character, comicsNeeded) {
     method: "GET"
   }).done(function(response) {
 
+
     console.log(response);
 
     var charCount = response.data.count;
@@ -80,6 +97,7 @@ function getCharacterID (character, comicsNeeded) {
     if (charCount === 1) {
       // we know there is only 1 entry so just use index 0 to store unique id
       charID = response.data.results[0].id;
+      console.log(response.data.results[0].id);
       //do we need to get comics also?
       if (comicsNeeded) {
         getComics(charID);
@@ -155,7 +173,7 @@ function getComics(characterID) {
         comicImg.attr("alt", "comic book image");
         imgDiv.append(comicImg); 
     
-        $(".buttons").append(imgDiv);
+        $(".comics").append(imgDiv);
         
       }
 
@@ -165,11 +183,61 @@ function getComics(characterID) {
       return;
 
     }
-    console.log(subresponse.data.results[0].title);
+    //console.log(subresponse.data.results[0].title);
 
-    console.log(displayImg);
-    console.log(subresponse.data.results[0].description);
+    //console.log(displayImg);
+    //console.log(subresponse.data.results[0].description);
 
   }) //----------END OF SECOND AJAX CALL  
 
-}
+} //----------END OF GET COMICS
+
+//Add a character
+//$(document).on("click", ".addChar", function() {
+$(".addChar").on("click", function() {
+
+  event.preventDefault();
+
+  var newChar = $(".addChar").val().trim();
+
+  //check to see if nothing entered
+  if (!newChar) {
+    return;
+  } else {
+    var charCheck = getCharacterID(newChar);
+
+    //Was a character found?
+    if (charCheck === "") {
+      console.log("ERROR - invalid char name")
+      return;
+    } else {
+
+      characters.push(newChar);
+      loadCharacters();
+      $(".addChar").val("");
+    }
+  }
+
+// Loads the buttons
+function loadCharacters(thumbnail) {
+
+  $(".newChar").empty();
+  $.each(characters, function(index, value) {
+
+     //Create a button and add to 
+    var b = $("<img>");
+    b.addClass("id", );
+    b.attr("data-name", value);
+    b.attr("id", value);  
+    b.text(value);
+    $(".buttons").append(b);
+
+  })  // end of each loop
+} //********** end of loadbuttons
+
+
+})  //----------end of add character
+
+
+
+})
