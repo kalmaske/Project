@@ -60,7 +60,9 @@ body {
 }
 
 input[type=text]:not(.browser-default),
-input[type=text]:not(.browser-default):focus:not([readonly])
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=text].valid:not(.browser-default)
+
 {
     color:white;
     border-bottom: 1px solid gray;
@@ -76,7 +78,7 @@ input[type=text]:not(.browser-default):focus:not([readonly])
 =======
 .btn:hover,
 .btn:focus,
-.butn{
+.btn{
     background-color: gray;
 >>>>>>> 7ddb99bb78ad39dc67da3e7d79dfdbe4ec1c7c01
 }
@@ -84,3 +86,5 @@ input[type=text]:not(.browser-default):focus:not([readonly])
 input[type=text]:not(.browser-default):focus:not([readonly])+label{
     color:white;
 }
+
+
