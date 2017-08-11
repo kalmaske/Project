@@ -170,7 +170,7 @@ function getComics(characterID) {
         $(".comics").append(imgDiv);
         imgDiv.css("float", "left");
         imgDiv.css("padding", "10px");
-        imgDiv.css("margin-top", "30px");
+        imgDiv.css("margin-top", "20px");
       }
 
     } else {

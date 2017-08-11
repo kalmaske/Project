@@ -13,14 +13,16 @@ function initMap() {
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: charlotte,
-    radius: 500,
+    radius: 50000,
     type: ['book_store']
   }, callback);
 }
 
 function callback(results, status) {
+  console.log("inside callback");
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
+      console.log(results[i]);
       createMarker(results[i]);
     }
   }
