@@ -21,6 +21,8 @@ firebase.initializeApp(config);
 //---------- VARIABLES ----------
 
 var maxComics = 8;
+var characters = [];
+
 //  Marvel api keys
 var publicKey = "7787f189e8742fa9621f551458ef4c36";
 var privateKey = "2efe1197ea45941b1e0263d5fef30b7b6c9b10bb"
@@ -57,7 +59,11 @@ $(".carousel-item").on("click", function() {
 
   }
  
-})
+}) //----------END OF CAROUSEL
+
+//---------- FUNCTIONS ----------
+//---------- FUNCTIONS ----------
+//---------- FUNCTIONS ----------
 
 //get unique character id
 function getCharacterID (character, comicsNeeded) {
@@ -184,6 +190,54 @@ function getComics(characterID) {
 
   }) //----------END OF SECOND AJAX CALL  
 
-}
+} //----------END OF GET COMICS
+
+//Add a character
+//$(document).on("click", ".addChar", function() {
+$(".addChar").on("click", function() {
+
+  event.preventDefault();
+
+  var newChar = $(".addChar").val().trim();
+
+  //check to see if nothing entered
+  if (!newChar) {
+    return;
+  } else {
+    var charCheck = getCharacterID(newChar);
+
+    //Was a character found?
+    if (charCheck === "") {
+      console.log("ERROR - invalid char name")
+      return;
+    } else {
+
+      characters.push(newChar);
+      loadCharacters();
+      $(".addChar").val("");
+    }
+  }
+
+// Loads the buttons
+function loadCharacters(thumbnail) {
+
+  $(".newChar").empty();
+  $.each(characters, function(index, value) {
+
+     //Create a button and add to 
+    var b = $("<img>");
+    b.addClass("id", );
+    b.attr("data-name", value);
+    b.attr("id", value);  
+    b.text(value);
+    $(".buttons").append(b);
+
+  })  // end of each loop
+} //********** end of loadbuttons
+
+
+})  //----------end of add character
+
+
 
 })
