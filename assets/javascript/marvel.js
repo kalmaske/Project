@@ -31,23 +31,32 @@ var hash = "";
 
 //this fires when use clicks on image in carousel
 
-// $(document).on("click", "", function() {
+$(".somefunction").on("click", "", function() {
 
 // var marvelChar = $(this).attr("id");
 
-var marvelChar = ("batman").split(" ").join("+").toLowerCase();
+var marvelChar = ("thor").split(" ").join("+").toLowerCase();
 console.log(marvelChar);
 
 //call function to get unique character id
 // true means to get comics also
 var characterID = getCharacterID(marvelChar, true)
+})
 
 //This occurs when user enters search criteria for new character
 $(".carousel-item").on("click", function() {
 
-  console.log($(this).attr("class"));
-  console.log($(this).attr("img"));
+  //check to see if active class was clicked
+  var charClass = ($(this).attr("class").split(' ')[1]);
 
+  if (charClass === "active") {
+
+    $(".comics").empty();
+    var clickedID = $(this).attr("id");
+    getComics(clickedID);
+
+  }
+ 
 })
 
 //get unique character id
