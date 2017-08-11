@@ -12,6 +12,7 @@ body {
     color: white;
     text-align: center;
     font-size: 30px;
+    padding:20px;
 }
 
 .nav-wrapper {
@@ -23,6 +24,7 @@ body {
 
 .brand-logo {
     font-size: 20px;
+    padding: 20px;
 }
 
 .carousel {
@@ -42,6 +44,12 @@ body {
 
     font-family: 'Lemon', cursive;
 }
+
+
+ #map {
+        height: 400px;
+        width: 100%;
+       }
 
 .row{
 	text-align: center;
