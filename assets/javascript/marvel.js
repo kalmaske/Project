@@ -5,12 +5,12 @@
 $(document).ready(function() {
 
 var config = {
-  apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
-  authDomain: "awsomeproject-a2f25.firebaseapp.com",
-  databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
-  projectId: "awsomeproject-a2f25",
-  storageBucket: "",
-  messagingSenderId: "408693856197"
+    apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
+    authDomain: "awsomeproject-a2f25.firebaseapp.com",
+    databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
+    projectId: "awsomeproject-a2f25",
+    storageBucket: "",
+    messagingSenderId: "408693856197"
 };
 
 //initialize firebase
@@ -237,7 +237,6 @@ function loadCharacters(thumbnail) {
 
 
 })  //----------end of add character
-
 
 
 })
