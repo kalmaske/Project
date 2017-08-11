@@ -168,7 +168,9 @@ function getComics(characterID) {
         imgDiv.append(comicImg); 
     
         $(".comics").append(imgDiv);
-        
+        imgDiv.css("float", "left");
+        imgDiv.css("padding", "10px");
+        imgDiv.css("margin-top", "30px");
       }
 
     } else {

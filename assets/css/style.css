@@ -70,7 +70,7 @@ input[type=text].valid:not(.browser-default)
 }
 
 
-.
+
 .btn:hover,
 .btn:focus,
 .btn{
@@ -81,5 +81,7 @@ input[type=text].valid:not(.browser-default)
 input[type=text]:not(.browser-default):focus:not([readonly])+label{
     color:white;
 }
-
+.comics {
+	float: left;
+}
 
