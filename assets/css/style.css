@@ -57,11 +57,30 @@ body {
 
 .active{
 	text-align: center;
+}
 
+input[type=text]:not(.browser-default),
+input[type=text]:not(.browser-default):focus:not([readonly])
+{
+    color:white;
+    border-bottom: 1px solid gray;
+    box-shadow: 0 1px 0 0 white;
+}
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 .btn-large{
     background-color: red;
 =======
 >>>>>>> 8fc57cc24f592bfdd28758594a63ef1a83d4e0df
+=======
+.btn:hover,
+.btn:focus,
+.butn{
+    background-color: gray;
+>>>>>>> 7ddb99bb78ad39dc67da3e7d79dfdbe4ec1c7c01
 }
 
+input[type=text]:not(.browser-default):focus:not([readonly])+label{
+    color:white;
+}

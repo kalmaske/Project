@@ -18,60 +18,18 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <!-- map script needs to be in index.html -->
-	<script>
-		var map;
-var infowindow;
-
-function initMap() {
-  var charlotte = {lat: 35.2126147, lng: -80.817919};
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: charlotte,
-    zoom: 12
-  });
-
-  infowindow = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch({
-    location: charlotte,
-    radius: 500,
-    type: ['book_store']
-  }, callback);
-}
-
-function callback(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-  }
-}
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
-  });
-}
-</script>
+	<script src="assets/javascript/mapapi.js"></script>
+	
     <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&callback=initMap">
+    </script>
+
     <!-- fire base -->
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/marvel.js"></script>
-
-
-
-
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
     <title>Project</title>
@@ -93,8 +51,7 @@ function createMarker(place) {
             </div>
         </div>
         <div class="carousel">
-            <a class="carousel-item" href="#one!"><img src="./assets/images/spiderman.png" alt="spiderman" </a>
-            <a class="carousel-item" href="#two!"><img src="assets/images/batman.png" alt="batman" height="300" width="300"></a>
+            <a class="carousel-item" href="#one!"><img src="./assets/images/spiderman.png" alt="spiderman"></a>
             <a class="carousel-item" href="#three!"><img src="assets/images/captinamerica.png" alt="captinamerica" height="300" width="300"></a>
             <a class="carousel-item" href="#four!"><img src="assets/images/blackwidow.png" alt="blackwidow" height="300" width="300"></a>
             <a class="carousel-item" href="#five!"><img src="assets/images/deadpool.png" alt="deadpool" height="300" width="300"></a>
@@ -103,29 +60,20 @@ function createMarker(place) {
         <!-- end carosel -->
         <br>
         <br>
-
-        <!-- <div class="form-group">
-                            <label>Search for a new character </label>
-                            <input class="form-control" id="search-button">
-                        </div><! end form group -->
-        <!-- <button type="button" class="btn btn-default" id="submit-button"> Search</button-->
-
+    
         <div class="row">
             <div class="input-field col s12">
                 <input id="search-comic" type="text" class="validate">
                 <label class="active" for="character">Search for a new character</label>
-                <div>
-                    <a class="waves-effect-waves-light btn-large">Submit</a>
-                </div>
-
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                </button>
             </div>
-
-
         </div>
-
-        <!-- <div class="row">
-        </div> -->
-
+        <div class="row">
+            <div class="newChar">
+                <!--  results for ne char will appear -->
+            </div>
+        </div>
         <div class="row">
             <div class="nav-wrapper">
                 <div class="col s6">
@@ -138,14 +86,13 @@ function createMarker(place) {
                     <div class="nav-wrapper">
                         <div class="brand-logo">Bookstores
                         </div>
-                   		<div id="map"></div>
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- end container -->
-
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
