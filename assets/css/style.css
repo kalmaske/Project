@@ -1,11 +1,14 @@
 body {
     text-align: center;
-    background-color: #FFFFE5;
+    /*background-color: #FFFFE5;*/
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/bg.png");
 }
 
 .collection-header,
 .collection-with-heade {
-    background-color: #26a69a;
+    background-color: #05121B;
     color: white;
     text-align: center;
     font-size: 30px;
@@ -13,7 +16,7 @@ body {
 }
 
 .nav-wrapper {
-    background-color: #26a69a;
+    background-color: #05121B;
     color: white;
     text-align: center;
     font-size: 35px;
@@ -54,5 +57,10 @@ body {
 
 .active{
 	text-align: center;
+}
+
+
+.button{
+    
 }
 
