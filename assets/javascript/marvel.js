@@ -2,8 +2,6 @@
 //
 // Initialize Firebase
 
-$(document).ready(function() {
-
 var config = {
     apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
     authDomain: "awsomeproject-a2f25.firebaseapp.com",
@@ -15,6 +13,10 @@ var config = {
 
 //initialize firebase
 firebase.initializeApp(config);
+
+$(document).ready(function() {
+
+
 
 //---------- VARIABLES ----------
 //---------- VARIABLES ----------
