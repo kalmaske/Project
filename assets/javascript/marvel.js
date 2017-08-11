@@ -51,7 +51,7 @@ $(".carousel-item").on("click", function() {
 
   if (charClass === "active") {
 
-    $(".comics").empty();
+    $(".newChar").empty();
     var clickedID = $(this).attr("id");
     getComics(clickedID);
 
