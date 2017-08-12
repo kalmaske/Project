@@ -34,8 +34,10 @@ $(document).ready(function() {
   //---------- METHODS ----------
   //---------- METHODS ----------
 
-
+  //clear the input field with a clicked
   $(document).on("click", "#search-char", function() {
+
+      event.preventDefault();
 
      $("#search-char").val("");
 
@@ -129,7 +131,7 @@ $(document).ready(function() {
   //---------- FUNCTIONS ----------
   function getCharacterID(character) {
 
-    console.log("character " + character);
+    // console.log("character " + character);
     var charID = "";
     //  create a hash tag for Marvel api - GRRRRRR!
     ts = String(new Date().getTime());
@@ -229,8 +231,11 @@ $(document).ready(function() {
         }
 
       } else {
-
-        console.log("error - no results were found");
+        //display an error message
+        var heading = $("<h5>");
+        heading.addClass("comicHead");
+        heading.html("OOPS - Our search encountered an issue. Please contact comic support"); 
+        $(".comics").append(heading);
         return;
 
       }
