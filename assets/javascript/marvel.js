@@ -152,7 +152,6 @@ $(document).ready(function() {
 
   }//---------END OF GETCHARACTERID
 
-
   //get list of comics from Marvel
   function getComics(characterID, characterName) {
 
@@ -186,6 +185,7 @@ $(document).ready(function() {
       var loopCount = comicCount;
 
       $(".comics").empty();
+      $("#map").empty();
 
       if (comicCount === 0) {
         // console.log("ERROR:  NO COMICS AVAILABLE")
@@ -215,11 +215,13 @@ $(document).ready(function() {
           var path = subresponse.data.results[i].thumbnail.path;
           var ext = subresponse.data.results[i].thumbnail.extension;
           var displayImg = path + "/portrait_large." + ext;
+          var title = subresponse.data.results[i].title;
 
           var imgDiv = $("<div>");
           var comicImg = $("<img>").attr("src", displayImg);
           comicImg.addClass("comicImg");
           comicImg.attr("alt", "comic book image");
+          comicImg.attr("data-title", title);
           imgDiv.append(comicImg);
 
           $(".comics").append(imgDiv);
