@@ -1,3 +1,7 @@
+  //---------- VARIABLES ----------
+  //---------- VARIABLES ----------
+  //---------- VARIABLES ----------
+
 var filterarray = [
     {"name":"MaxPrice",
      "value":"25",
@@ -11,14 +15,17 @@ var filterarray = [
 
 var urlfilter = "";
 
-
 $(document).on("click", ".comicImg", function() {
 
   var title = $(this).attr("data-title").replace(/ *\([^)]*\) */gi, "").split(" ").join("+");
 
-  console.log("title " + title);
+  //console.log("title " + title);
 
-  getebay(title);
+  database.ref("lastebay").set({
+      title:title
+  })
+
+  //getebay(title);
 })
 
 function getebay(title) {
@@ -45,7 +52,7 @@ function getebay(title) {
       url += "&keywords=" + title;
 
 
-  console.log("url " + url);
+   // console.log("url " + url);
   //let's talk to ebay
   $.ajax({
     url: url,
@@ -53,7 +60,7 @@ function getebay(title) {
     dataType : 'jsonp'
   }).done(function(response) {
 
-    console.log(response);
+   // console.log(response);
 
   });
 }
@@ -102,3 +109,18 @@ function  buildURLArray() {
     }
   }
 }  // End buildURLArray() function
+
+//---------- DATABASE ----------
+//---------- DATABASE ----------
+//---------- DATABASE ----------
+
+database.ref("lastebay").on("value", function(snapshot) {
+
+  //refresh ebay listing
+  if (snapshot.child("title").exists()) {
+    var title = snapshot.val().title;
+    getebay(title);
+  }
+
+    
+})

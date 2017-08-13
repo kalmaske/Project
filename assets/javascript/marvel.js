@@ -1,16 +1,26 @@
 // js for code involving marvel
 //
 // Initialize Firebase
-$(document).ready(function() {
 
+   // Initialize Firebase - My play project
   var config = {
-    apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
-    authDomain: "awsomeproject-a2f25.firebaseapp.com",
-    databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
-    projectId: "awsomeproject-a2f25",
+    apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
+    authDomain: "uncc-project-1-5c704.firebaseapp.com",
+    databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
+    projectId: "uncc-project-1-5c704",
     storageBucket: "",
-    messagingSenderId: "408693856197"
+    messagingSenderId: "1081385197579"
   };
+
+  // Initialize Firebase - Team DB
+  // var config = {
+  //   apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
+  //   authDomain: "awsomeproject-a2f25.firebaseapp.com",
+  //   databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
+  //   projectId: "awsomeproject-a2f25",
+  //   storageBucket: "",
+  //   messagingSenderId: "408693856197"
+  // };
 
   //initialize firebase
   firebase.initializeApp(config);
@@ -18,6 +28,10 @@ $(document).ready(function() {
   //---------- VARIABLES ----------
   //---------- VARIABLES ----------
   //---------- VARIABLES ----------
+
+  var database = firebase.database();
+  
+$(document).ready(function() {
 
   var maxComics = 9;
   var characters = [];
@@ -54,7 +68,19 @@ $(document).ready(function() {
 
       var clickedID = $(this).attr("id");
       var clickedName = $(this).attr("data-name");
-      getComics(clickedID, clickedName);
+      var clickedIndex = $(this).attr("data-index")
+
+      database.ref("comicsCharacter").set({
+        id:clickedID,
+        name:clickedName,
+      })
+      
+      //store in firebase to persist
+      database.ref("carousel").set({
+        id:clickedID,
+        name:clickedName,
+        idx:clickedIndex
+      })
 
     }
 
@@ -75,7 +101,7 @@ $(document).ready(function() {
 
         getCharacterID(newChar).done(function(response) {
 
-            console.log(response);
+           // console.log(response);
 
             var charCount = response.data.count;
 
@@ -95,11 +121,14 @@ $(document).ready(function() {
                 thumbnail: displayImg
               };
 
-              //Does character already exist no - add them  yes - skip them
+              //Does character already exist no - add them,  yes - skip them
 
                 characters.push(charObj);
 
-                loadCharacters(charObj);
+                //need this if not using database for persistence
+                //loadCharacters(charObj);
+
+                database.ref("characters").push(charObj);
 
                 $("#search-char").val("");
          
@@ -122,7 +151,10 @@ $(document).ready(function() {
     var charID = $(this).attr("id");
     var charName = $(this).attr("data-name")
 
-    getComics(charID, charName);
+    database.ref("comicsCharacter").set({
+        id:charID,
+        name:charName,
+      })
 
   })  //----------END OF NEW CHAR IMG CLICK
 
@@ -179,7 +211,7 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(subresponse) {
 
-      console.log(subresponse);
+     // console.log(subresponse);
 
       var comicCount = subresponse.data.count;
       var loopCount = comicCount;
@@ -246,23 +278,39 @@ $(document).ready(function() {
 
   } //----------END OF GET COMICS
 
+  //---------- DATABASE ----------
+  //---------- DATABASE ----------
+  //---------- DATABASE ----------
+  database.ref("characters").orderByKey().on("child_added", function(snapshot) {
 
-  // Loads the buttons
-  function loadCharacters(charObject) {
-
-    $(".newChar").empty();
-
-    $.each(characters, function(index, value) {
-
-      //Create a button and add to 
+      //Create a img and add to 
       var b = $("<img>");
       b.addClass("newCharImg");
-      b.attr("id", value.charID);
-      b.attr("src", value.thumbnail);
-      b.attr("data-name", value.charName);
+      b.attr("id", snapshot.val().charID);
+      b.attr("src", snapshot.val().thumbnail);
+      b.attr("data-name", snapshot.val().charName);
       $(".newChar").append(b);
-
-    }) // end of each loop
-  } //********** end of loadcharacters
-
   })
+
+  database.ref("carousel").on("value", function(snapshot) {
+
+    if (snapshot.child("idx").exists()) {
+      var id = snapshot.val().id;
+      var name = snapshot.val().name;
+      var index = snapshot.val().idx;
+      $('.carousel').carousel('set', parseInt(index));
+    } else {
+      $('.carousel').carousel('set', 0);
+    }
+  })
+
+  database.ref("comicsCharacter").on("value", function(snapshot) {
+
+    if (snapshot.child("id").exists() && snapshot.child("name").exists()) {
+      var id = snapshot.val().id;
+      var name = snapshot.val().name;        
+      getComics(id, name);
+    }
+  })
+
+})
