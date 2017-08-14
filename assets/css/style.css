@@ -2,21 +2,25 @@ body {
     text-align: center;
     /*background-color: #FFFFE5;*/
     background-size: cover;
-   /* background-repeat: repeat;*/
+    /* background-repeat: repeat;*/
     background-image: url("../images/bg.png");
+}
+
+h1{
+    margin:20px 0 0 0 ;
 }
 
 .collection-header,
 .collection-with-heade {
-   /* background-color: #05121B;*/
+    /* background-color: #05121B;*/
     color: white;
     text-align: center;
     font-size: 30px;
-    padding:20px;
+    padding: 20px;
 }
 
 .nav-wrapper {
-  /*  background-color: #05121B;*/
+    /*  background-color: #05121B;*/
     color: white;
     text-align: center;
     font-size: 35px;
@@ -46,44 +50,58 @@ body {
 }
 
 
- #map {
-        height: 400px;
-        width: 100%;
-       }
-
-.row{
-	text-align: center;
+#map {
+    height: 400px;
+    width: 100%;
 }
 
-.active{
-	text-align: center;
+.row {
+    text-align: center;
+}
+
+.active {
+    text-align: center;
 }
 
 input[type=text]:not(.browser-default),
 input[type=text]:not(.browser-default):focus:not([readonly]),
-input[type=text].valid:not(.browser-default)
-
-{
-    color:white;
+input[type=text].valid:not(.browser-default) {
+    color: white;
     border-bottom: 1px solid gray;
     box-shadow: 0 1px 0 0 white;
+}
+.newCharImage{
+     margin:2%;
+     padding: 5px;
 }
 
 
 
 .btn:hover,
 .btn:focus,
-.btn{
+.btn {
     background-color: gray;
-
 }
 
-input[type=text]:not(.browser-default):focus:not([readonly])+label{
-    color:white;
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+    color: white;
 }
 
-.newChar{
+.newChar {
     padding-bottom: 20px;
 }
 
+.newCharImg{
+    padding: 5px;
+}
 
+#ebayImg{
+    display: inline-block;
+    position: relative;
+    width:4em;
+    height: 1em;
+}
+
+a{
+    color: white;
+}
