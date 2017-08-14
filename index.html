@@ -15,22 +15,17 @@
     <script src="assets/javascript/md5.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <!-- map script needs to be in index.html -->
-    <!-- *****************<script src="assets/javascript/mapapi.js"></script> -->
-    <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
-   <!-- ****************** <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&libraries=places&callback=initMap" async defer></script>
- -->
+
+
     <!-- Moment file -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-   
     <!-- fire base -->
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/marvel.js"></script>
     <script type="text/javascript" src="assets/javascript/ebay.js"></script>
-
-
+    <script type="text/javascript" src="assets/javascript/mapapi.js"></script>
+    
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
     <title>Comic Collector</title>
@@ -45,8 +40,7 @@
                 <h1>Comic Collector</h1>
             </div>
         </div>
-        <!--         <div class="collection">
- -->
+      `
         <div class="nav-wrapper">
             <div class="brand-logo">Click on the character that you like or search for a new character.
             </div>
@@ -61,7 +55,6 @@
             <a id="1009368" data-index="6" class="carousel-item" data-name="Ironman" href="#seven!"><img src="assets/images/ironman.png" alt="IronMan" height="300" width="300"></a>
             <a id="1009718" data-index="7" class="carousel-item" data-name="Wolverine" href="#eight!"><img src="assets/images/wolverine.png" alt="wolverine" height="300" width="300"></a>
             <a id="1009465" data-index="8" class="carousel-item" data-name="Mystique" href="#nine!"><img src="assets/images/mystique.png" alt="mystique" height="300" width="300"></a>
-
         </div>
         <!-- end carosel -->
         <br>
@@ -74,7 +67,6 @@
                 </button>
             </form>
         </div>
-
         <div class="row">
             <div class="newChar">
                 <!--  results for new char will appear -->
@@ -94,21 +86,33 @@
                 </div>
                 <div class="col s6">
                     <div class="nav-wrapper">
+
                         <div class="brand-logo">
 
                         <h3>purchase from eBay<!-- <img id=  "ebayImg" src="assets/images/ebay.png"> --></h3>
                         </div>
                         </div>
-                       <!--  <div class="brand-logo">
-                        Click title to shop
-                        </div> -->
-                        <div id="map"></div>
-                    </div>
+
+                    <div id="ebay"></div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+    	<div class="col s12 stores">
+    	<h2>Comic Store Locator</h2>
+    	</div>
+    </div>
+    <div class="row">
+    <div class="col s12 text-center">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    </div>
+    </div>
+    </div>
     <!-- end container -->
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 
 </html>

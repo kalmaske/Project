@@ -217,7 +217,7 @@ $(document).ready(function() {
       var loopCount = comicCount;
 
       $(".comics").empty();
-      $("#map").empty();
+      $("#ebay").empty();
 
       if (comicCount === 0) {
         // console.log("ERROR:  NO COMICS AVAILABLE")
