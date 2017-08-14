@@ -67,7 +67,7 @@ function getebay(title) {
 
 function processResponse(root) {
 
-  $("#map").empty();
+  $("#ebay").empty();
   var items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
 
   for (var i = 0; i < items.length; ++i) {
