@@ -244,5 +244,4 @@ function loadCharacters(thumbnail) {
 
 })  //----------end of add character
 
-
 })
