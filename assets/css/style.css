@@ -1,22 +1,27 @@
+
 body {
     text-align: center;
     /*background-color: #FFFFE5;*/
     background-size: cover;
-   /* background-repeat: repeat;*/
+    /* background-repeat: repeat;*/
     background-image: url("../images/bg.png");
+}
+
+h1{
+    margin:20px 0 0 0 ;
 }
 
 .collection-header,
 .collection-with-heade {
-   /* background-color: #05121B;*/
+    /* background-color: #05121B;*/
     color: white;
     text-align: center;
     font-size: 30px;
-    padding:20px;
+    padding: 20px;
 }
 
 .nav-wrapper {
-  /*  background-color: #05121B;*/
+    /*  background-color: #05121B;*/
     color: white;
     text-align: center;
     font-size: 35px;
@@ -25,6 +30,7 @@ body {
 .brand-logo {
     font-size: 20px;
     padding: 20px;
+ 
 }
 
 .carousel {
@@ -46,44 +52,145 @@ body {
 }
 
 
+
+
  #map {
         height: 400px;
-        width: 100%;
+        width: 800px;
+        color: black;
+        margin: 0 auto;
        }
 
-.row{
-	text-align: center;
+
+.row {
+    text-align: center;
 }
 
-.active{
-	text-align: center;
+.active {
+    text-align: center;
 }
 
 input[type=text]:not(.browser-default),
 input[type=text]:not(.browser-default):focus:not([readonly]),
-input[type=text].valid:not(.browser-default)
-
-{
-    color:white;
+input[type=text].valid:not(.browser-default) {
+    color: white;
     border-bottom: 1px solid gray;
     box-shadow: 0 1px 0 0 white;
+}
+.newCharImage{
+     margin:2%;
+     padding: 5px;
 }
 
 
 
 .btn:hover,
 .btn:focus,
-.btn{
+.btn {
     background-color: gray;
-
 }
 
-input[type=text]:not(.browser-default):focus:not([readonly])+label{
-    color:white;
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+    color: white;
 }
 
-.newChar{
+.newChar {
     padding-bottom: 20px;
 }
 
+
+.newCharImg{
+    padding: 5px;
+}
+
+#ebayImg{
+    display: inline-block;
+    position: relative;
+    width:4em;
+    height: 1em;
+}
+
+a{
+    color: white;
+}
+
+ 
+     
+      
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+        color: black;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+
+	.stores {
+		color: white;
+		font-family: 'Lemon', cursive;
+	}
 
