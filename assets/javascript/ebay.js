@@ -79,7 +79,7 @@ function processResponse(root) {
       pic = "assets/images/ina.jpg"
     }
     if (null != title && null != viewitem) {
-      $("#map").append('<tr class="brand-logo"><td>' + '<img src="' + pic + '" border="0">' + '</td>' + 
+      $("#ebay").append('<tr class="brand-logo"><td>' + '<img src="' + pic + '" border="0">' + '</td>' + 
       '<td><a href="' + viewitem + '" target="_blank">' + title + '</a></td></tr>');
     }
   }
