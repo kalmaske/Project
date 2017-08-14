@@ -163,27 +163,6 @@ $(document).ready(function() {
   //---------- FUNCTIONS ----------
   function getCharacterID(character) {
 
-
-      for (var i = 0; i < comicCount; i++) {
-
-        var path = subresponse.data.results[i].thumbnail.path;
-        var ext = subresponse.data.results[i].thumbnail.extension;
-        var displayImg = path + "/portrait_large." + ext;
-        
-        var imgDiv = $("<div>");      
-
-        var comicImg = $("<img>").attr("src", displayImg);
-        comicImg.addClass("comicImg");
-        comicImg.attr("alt", "comic book image");
-        imgDiv.append(comicImg); 
-        
-        $(".comics").append(imgDiv);
-
-        imgDiv.css("float", "left");
-        imgDiv.css("padding", "20px");
-        imgDiv.css("margin-top", "20px");
-
-
     // console.log("character " + character);
     var charID = "";
     //  create a hash tag for Marvel api - GRRRRRR!
