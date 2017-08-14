@@ -59,7 +59,7 @@ $(document).ready(function() {
   //This occurs when user enters search criteria for new character
   $(".carousel-item").on("click", function() {
 
-    event.preventDefault();
+    //event.preventDefault();
 
     //check to see if active class was clicked
     var charClass = ($(this).attr("class").split(' ')[1]);
@@ -88,7 +88,7 @@ $(document).ready(function() {
 
   //----------  ADD A CHARACTER
   //$(document).on("click", ".addChar", function() {
-  $(".addChar").on("click", function() {
+  $(".addChar").on("click", function(event) {
 
     event.preventDefault();
 
@@ -145,7 +145,7 @@ $(document).ready(function() {
   //display comic books when a user clicks on a newly added character
   $(document).on("click", ".newCharImg", function() {
 
-    event.preventDefault();
+    //event.preventDefault();
 
     //check to see if active class was clicked
     var charID = $(this).attr("id");
