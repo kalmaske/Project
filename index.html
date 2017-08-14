@@ -16,29 +16,24 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <!-- map script needs to be in index.html -->
-    <script src="assets/javascript/mapapi.js"></script>
+    <!-- *****************<script src="assets/javascript/mapapi.js"></script> -->
     <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&libraries=places&callback=initMap" async defer></script>
-    
-    <script src = "https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js">
-    </script>
-
-    <!-- javascript -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <script type="text/javascript" src="assets/javascript/marvel.js"></script>
-
-
+   <!-- ****************** <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&libraries=places&callback=initMap" async defer></script>
+ -->
     <!-- Moment file -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
    
-
     <!-- fire base -->
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/marvel.js"></script>
+    <script type="text/javascript" src="assets/javascript/ebay.js"></script>
+
+
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
-    <title>Project</title>
+    <title>Comic Collector</title>
     <!-- style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -57,42 +52,39 @@
             </div>
         </div>
         <div class="carousel">
-            <a id="1009610" class="carousel-item" href="#one!"><img src="./assets/images/spiderman.png" alt="spiderman"></a>
-            <a id="1009220" class="carousel-item" href="#two!"><img src="assets/images/captinamerica.png" alt="captinamerica" height="300" width="300"></a>
-            <a id="1009189" class="carousel-item" href="#three!"><img src="assets/images/blackwidow.png" alt="blackwidow" height="300" width="300"></a>
-            <a id="1009268" class="carousel-item" href="#four!"><img src="assets/images/deadpool.png" alt="deadpool" height="300" width="300"></a>
-            <a id="1009664" class="carousel-item" href="#five!"><img src="assets/images/hulk.png" alt="hulk" height="300" width="300"></a>
-            <a id="1009281" class="carousel-item" href="#six!"><img src="assets/images/drdoom.png" alt="Dr.Doom" height="300" width="300"></a>
-            <a id="1009368" class="carousel-item" href="#seven!"><img src="assets/images/ironman.png" alt="IronMan" height="300" width="300"></a>
-            <a id="1009718" class="carousel-item" href="#eight!"><img src="assets/images/wolverine.png" alt="wolverine" height="300" width="300"></a>
-            <a id="1009465" class="carousel-item" href="#nine!"><img src="assets/images/mystique.png" alt="mystique" height="300" width="300"></a>
+            <a id="1009610" data-index="0" class="carousel-item" data-name="Spider Man" href="#one!"><img src="./assets/images/spiderman.png" alt="spiderman"></a>
+            <a id="1009220" data-index="1" class="carousel-item" data-name="Captain America" href="#two!"><img src="assets/images/captinamerica.png" alt="captinamerica" height="300" width="300"></a>
+            <a id="1009189" data-index="2" class="carousel-item" data-name="Black Widow" href="#three!"><img src="assets/images/blackwidow.png" alt="blackwidow" height="300" width="300"></a>
+            <a id="1009268" data-index="3" class="carousel-item" data-name="Deadpool" href="#four!"><img src="assets/images/deadpool.png" alt="deadpool" height="300" width="300"></a>
+            <a id="1009664" data-index="4" class="carousel-item" data-name="Hulk" href="#five!"><img src="assets/images/hulk.png" alt="hulk" height="300" width="300"></a>
+            <a id="1009281" data-index="5" class="carousel-item" data-name="Doctor Doom" href="#six!"><img src="assets/images/drdoom.png" alt="Dr.Doom" height="300" width="300"></a>
+            <a id="1009368" data-index="6" class="carousel-item" data-name="Ironman" href="#seven!"><img src="assets/images/ironman.png" alt="IronMan" height="300" width="300"></a>
+            <a id="1009718" data-index="7" class="carousel-item" data-name="Wolverine" href="#eight!"><img src="assets/images/wolverine.png" alt="wolverine" height="300" width="300"></a>
+            <a id="1009465" data-index="8" class="carousel-item" data-name="Mystique" href="#nine!"><img src="assets/images/mystique.png" alt="mystique" height="300" width="300"></a>
+
         </div>
         <!-- end carosel -->
         <br>
         <br>
         <div class="row">
-            <div class="input-field col s12">
-                <input id="search-comic" type="text" class="validate">
+            <form class="input-field col s12">
+                <input id="search-char" type="text" class="validate">
                 <label class="active" for="character">Search for a new character</label>
                 <button class="btn waves-effect waves-light addChar" type="submit" name="action">Submit
                 </button>
-            </div>
+            </form>
         </div>
+
         <div class="row">
             <div class="newChar">
-                <!--  results for ne char will appear -->
+                <!--  results for new char will appear -->
             </div>
-        </div>
-        <!-- <div class="row">
-        </div> -->
-        <div class="row">
-            <div class="newChar"></div>
         </div>
         <div class="row">
             <div class="nav-wrapper">
                 <div class="col s6">
                     <div class="nav-wrapper">
-                        <div class="brand-logo">Character's comic book
+                        <div class="brand-logo">Comic Books
                         </div>
                         <div class="comics">
                             <!--  results for ne char will appear -->
@@ -101,8 +93,11 @@
                 </div>
                 <div class="col s6">
                     <div class="nav-wrapper">
-                        <div class="brand-logo">Bookstores
+                        <div class="brand-logo"><img src="assets/images/ebay.png" width="100px" height="80px"></div>
                         </div>
+                       <!--  <div class="brand-logo">
+                        Click title to shop
+                        </div> -->
                         <div id="map"></div>
                     </div>
                 </div>
