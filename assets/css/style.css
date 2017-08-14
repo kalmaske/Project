@@ -69,14 +69,21 @@ input[type=text].valid:not(.browser-default)
     box-shadow: 0 1px 0 0 white;
 }
 
+
+
 .btn:hover,
 .btn:focus,
 .btn{
     background-color: gray;
+
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly])+label{
     color:white;
+}
+
+.newChar{
+    padding-bottom: 20px;
 }
 
 
