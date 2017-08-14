@@ -56,7 +56,7 @@ $(document).ready(function() {
     $("#search-char").val("");
 
   })
-  //This occurs when user enters search criteria for new character
+  //This occurs when user clicks on a carousel item
   $(".carousel-item").on("click", function() {
 
     //event.preventDefault();
@@ -69,6 +69,11 @@ $(document).ready(function() {
       var clickedID = $(this).attr("id");
       var clickedName = $(this).attr("data-name");
       var clickedIndex = $(this).attr("data-index")
+
+      $("#ebay").empty();
+      database.ref("lastebay").set({
+         title:null
+      })
 
       database.ref("comicsCharacter").set({
         id: clickedID,
@@ -151,6 +156,12 @@ $(document).ready(function() {
     var charID = $(this).attr("id");
     var charName = $(this).attr("data-name")
 
+
+    $("#ebay").empty();
+    database.ref("lastebay").set({
+         title:null
+     })
+
     database.ref("comicsCharacter").set({
       id: charID,
       name: charName,
@@ -217,7 +228,6 @@ $(document).ready(function() {
       var loopCount = comicCount;
 
       $(".comics").empty();
-      $("#ebay").empty();
 
       if (comicCount === 0) {
         // console.log("ERROR:  NO COMICS AVAILABLE")

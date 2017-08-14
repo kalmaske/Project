@@ -69,14 +69,15 @@ function getebay(title) {
 function processResponse(root) {
 
   //console.log(root);
-  $("#ebay").empty();
+  
   var items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
 
+  $("#ebay").empty();
+  
   if (items.length === 0) {
      $("#ebay").append('<div class="brand-logo"><span>Sorry!  No ebay items found</span></div>');
      return;
   }
-
 
   for (var i = 0; i < items.length; ++i) {
     var item     = items[i];
