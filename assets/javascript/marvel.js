@@ -174,14 +174,12 @@ function getComics(characterID) {
         comicImg.addClass("comicImg");
         comicImg.attr("alt", "comic book image");
         imgDiv.append(comicImg); 
-    
+        
         $(".comics").append(imgDiv);
 
         imgDiv.css("float", "left");
-        imgDiv.css("padding", "10px");
+        imgDiv.css("padding", "20px");
         imgDiv.css("margin-top", "20px");
-
-        
 
       }
 
