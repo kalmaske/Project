@@ -3,24 +3,24 @@
 // Initialize Firebase
 
 // Initialize Firebase - My play project
-// var config = {
-//   apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
-//   authDomain: "uncc-project-1-5c704.firebaseapp.com",
-//   databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
-//   projectId: "uncc-project-1-5c704",
-//   storageBucket: "",
-//   messagingSenderId: "1081385197579"
-// };
+var config = {
+  apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
+  authDomain: "uncc-project-1-5c704.firebaseapp.com",
+  databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
+  projectId: "uncc-project-1-5c704",
+  storageBucket: "",
+  messagingSenderId: "1081385197579"
+};
 
 //Initialize Firebase - Team DB
-var config = {
-  apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
-  authDomain: "awsomeproject-a2f25.firebaseapp.com",
-  databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
-  projectId: "awsomeproject-a2f25",
-  storageBucket: "",
-  messagingSenderId: "408693856197"
-};
+// var config = {
+//   apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
+//   authDomain: "awsomeproject-a2f25.firebaseapp.com",
+//   databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
+//   projectId: "awsomeproject-a2f25",
+//   storageBucket: "",
+//   messagingSenderId: "408693856197"
+// };
 
 //initialize firebase
 firebase.initializeApp(config);

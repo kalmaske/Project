@@ -17,10 +17,10 @@ var urlfilter = "";
 
 $(document).on("click", ".comicImg", function() {
 
-  console.log($(this).attr("data-title"))
+  //console.log($(this).attr("data-title"))
   var title = $(this).attr("data-title").replace(/ *\([^)]*\) */gi, "").split(" ").join("+");
 
-  console.log("title " + title);
+  //console.log("title " + title);
 
   database.ref("lastebay").set({
       title:title
