@@ -282,7 +282,7 @@ $(document).ready(function() {
   //---------- DATABASE ----------
   //---------- DATABASE ----------
   database.ref("characters").orderByKey().on("child_added", function(snapshot) {
-
+    
     //Create a img and add to 
     var b = $("<img>");
     b.addClass("newCharImg");
