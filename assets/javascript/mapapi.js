@@ -1,15 +1,12 @@
- 
- <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-                        <div id="map">
-                        </div>
      
       function initAutocomplete() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -33.8688, lng: 151.2195},
+
+         var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.212614, lng: -80.817919},
           zoom: 13,
           mapTypeId: 'roadmap'
         });
-
+         
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
