@@ -15,8 +15,6 @@
     <script src="assets/javascript/md5.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-
-
     <!-- Moment file -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- fire base -->
@@ -25,7 +23,6 @@
     <script type="text/javascript" src="assets/javascript/marvel.js"></script>
     <script type="text/javascript" src="assets/javascript/ebay.js"></script>
     <script type="text/javascript" src="assets/javascript/mapapi.js"></script>
-    
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lemon" rel="stylesheet">
     <title>Comic Collector</title>
@@ -40,7 +37,7 @@
                 <h1>Comic Collector</h1>
             </div>
         </div>
-      `
+        `
         <div class="nav-wrapper">
             <div class="brand-logo">Click on the character that you like or search for a new character.
             </div>
@@ -77,7 +74,7 @@
                 <div class="col s6">
                     <div class="nav-wrapper">
                         <div class="brand-logo">
-                        <h3>Comic Books</h3>
+                            <h3>Comic Books</h3>
                         </div>
                         <div class="comics">
                             <!--  results for ne char will appear -->
@@ -86,34 +83,28 @@
                 </div>
                 <div class="col s6">
                     <div class="nav-wrapper">
-
                         <div class="brand-logo">
-
-                        <h3>purchase from eBay<!-- <img id=  "ebayImg" src="assets/images/ebay.png"> --></h3>
+                            <h4>purchase from eBay<!-- <img id=  "ebayImg" src="assets/images/ebay.png"> --></h4>
                         </div>
-                       <!--  <div class="brand-logo">
-                        Click title to shop
-                        </div> -->
-                        <div id="ebay"></div>
                     </div>
+                    <div id="ebay"></div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-    	<div class="col s12 stores">
-    	<h2>Comic Store Locator</h2>
-    	</div>
+        <div class="col s12 stores">
+            <h4>Comic Store Locator</h4>
+        </div>
     </div>
     <div class="row">
-    <div class="col s12 text-center">
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-    </div>
+        <div class="col s12 text-center">
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="map"></div>
+        </div>
     </div>
     </div>
     <!-- end container -->
-    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZYp3xqKiJYArFcamxUAAEc_3pdAlvFn0&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 

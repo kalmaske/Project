@@ -1,4 +1,3 @@
-
 body {
     text-align: center;
     /*background-color: #FFFFE5;*/
@@ -7,8 +6,8 @@ body {
     background-image: url("../images/bg.png");
 }
 
-h1{
-    margin:20px 0 0 0 ;
+h1 {
+    margin: 20px 0 0 0;
 }
 
 .collection-header,
@@ -30,7 +29,6 @@ h1{
 .brand-logo {
     font-size: 20px;
     padding: 20px;
- 
 }
 
 .carousel {
@@ -54,12 +52,12 @@ h1{
 
 
 
- #map {
-        height: 400px;
-        width: 800px;
-        color: black;
-        margin: 0 auto;
-       }
+#map {
+    height: 400px;
+    width: 800px;
+    color: black;
+    margin: 0 auto;
+}
 
 
 .row {
@@ -77,9 +75,10 @@ input[type=text].valid:not(.browser-default) {
     border-bottom: 1px solid gray;
     box-shadow: 0 1px 0 0 white;
 }
-.newCharImage{
-     margin:2%;
-     padding: 5px;
+
+.newCharImage {
+    margin: 2%;
+    padding: 5px;
 }
 
 
@@ -99,98 +98,98 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
 }
 
 
-.newCharImg{
+.newCharImg {
     padding: 5px;
 }
 
-#ebayImg{
+#ebayImg {
     display: inline-block;
     position: relative;
-    width:4em;
+    width: 4em;
     height: 1em;
 }
 
-a{
+a {
     color: white;
 }
 
- 
-     
-      
-      #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-      }
 
-      #infowindow-content .title {
-        font-weight: bold;
-      }
 
-      #infowindow-content {
-        display: none;
-      }
 
-      #map #infowindow-content {
-        display: inline;
-      }
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
 
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: Roboto;
-      }
+#infowindow-content .title {
+    font-weight: bold;
+}
 
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
+#infowindow-content {
+    display: none;
+}
 
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
+#map #infowindow-content {
+    display: inline;
+}
 
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
 
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-        color: black;
-      }
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
 
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-      #target {
-        width: 345px;
-      }
+.pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
 
-	.stores {
-		color: white;
-		font-family: 'Lemon', cursive;
-	}
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+    color: black;
+}
 
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+}
+
+#target {
+    width: 345px;
+}
+
+.stores {
+    color: white;
+    font-family: 'Lemon', cursive;
+}
