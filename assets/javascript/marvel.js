@@ -289,6 +289,7 @@ $(document).ready(function() {
     b.attr("id", snapshot.val().charID);
     b.attr("src", snapshot.val().thumbnail);
     b.attr("data-name", snapshot.val().charName);
+    b.attr("title", snapshot.val().charName);
     $(".newChar").append(b);
   })
 
