@@ -23,7 +23,7 @@ h1 {
     /*  background-color: #05121B;*/
     color: white;
     text-align: center;
-    font-size: 35px;   
+    font-size: 35px;
 }
 
 .brand-logo {
@@ -54,9 +54,6 @@ h1 {
     background-position: center bottom;
     border: solid 5px black;
     min-height: 780px !important;
-
-
-
 }
 
 .borders2 {
@@ -65,8 +62,8 @@ h1 {
     background-position: right bottom;
     border: solid 5px black;
     min-height: 780px !important;
-    
 }
+
 #map {
     height: 400px;
     width: 800px;
