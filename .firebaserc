@@ -1,5 +1,9 @@
 {
   "projects": {
+<<<<<<< HEAD
     "default": "project1-acaa9"
+=======
+    "default": "awsomeproject-a2f25"
+>>>>>>> 6cf90979b128f405ae15b56af6d2155e7e3a0f43
   }
 }
