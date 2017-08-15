@@ -17,6 +17,7 @@ var urlfilter = "";
 
 $(document).on("click", ".comicImg", function() {
 
+  //console.log($(this).attr("data-title"))
   var title = $(this).attr("data-title").replace(/ *\([^)]*\) */gi, "").split(" ").join("+");
 
   //console.log("title " + title);
@@ -52,7 +53,7 @@ function getebay(title) {
       url += "&keywords=" + title;
 
 
-   // console.log("url " + url);
+  //console.log("url " + url);
   //let's talk to ebay
   $.ajax({
     url: url,
@@ -67,8 +68,16 @@ function getebay(title) {
 
 function processResponse(root) {
 
-  $("#ebay").empty();
+  //console.log(root);
+  
   var items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
+
+  $("#ebay").empty();
+  
+  if (items.length === 0) {
+     $("#ebay").append('<div class="brand-logo"><span>Sorry!  No ebay items found</span></div>');
+     return;
+  }
 
   for (var i = 0; i < items.length; ++i) {
     var item     = items[i];
