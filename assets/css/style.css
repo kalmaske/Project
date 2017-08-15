@@ -23,7 +23,7 @@ h1 {
     /*  background-color: #05121B;*/
     color: white;
     text-align: center;
-    font-size: 35px;
+    font-size: 35px;   
 }
 
 .brand-logo {
@@ -41,7 +41,7 @@ h1 {
     width: 250px;
     height: 250px;
     margin-right: auto;
-    margin left: auto;
+    margin-left: auto;
 }
 
 .container {
@@ -49,8 +49,25 @@ h1 {
     font-family: 'Lemon', cursive;
 }
 
+.borders {
+    background-image: url("http://i.imgur.com/64WG7MPr.jpg");
+    background-position: center bottom;
+    border: solid 5px black;
+    min-height: 780px !important;
 
 
+
+
+}
+
+.borders2 {
+    overflow: hidden;
+    background-image: url("http://i.imgur.com/64WG7MPr.jpg");
+    background-position: right bottom;
+    border: solid 5px black;
+    min-height: 780px !important;
+    
+}
 
 #map {
     height: 400px;
@@ -192,4 +209,10 @@ a {
 .stores {
     color: white;
     font-family: 'Lemon', cursive;
+
+}
+
+footer {
+    background-color: black !important;
+    color: white !important;
 }
