@@ -10,14 +10,17 @@ h1 {
     margin: 20px 0 0 0;
 }
 
+
 .collection-header,
-.collection-with-heade {
+.collection-with-heade,
+h1
+{
     /* background-color: #05121B;*/
     color: rgba(147, 42, 35, 0.93);
     font-family: 'Anton', sans-serif;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 80px;
     padding: 20px;
 }
 
