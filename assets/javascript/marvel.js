@@ -13,17 +13,15 @@
 // };
 
 //Initialize Firebase - Team DB
-var config = {
-  apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
-  authDomain: "awsomeproject-a2f25.firebaseapp.com",
-  databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
-  projectId: "awsomeproject-a2f25",
-  storageBucket: "",
-  messagingSenderId: "408693856197"
-};
-
-//initialize firebase
-firebase.initializeApp(config);
+ var config = {
+    apiKey: "AIzaSyCky87hhotEI5ITIYU-aVLsZPcJrjbie7A",
+    authDomain: "project1-acaa9.firebaseapp.com",
+    databaseURL: "https://project1-acaa9.firebaseio.com",
+    projectId: "project1-acaa9",
+    storageBucket: "project1-acaa9.appspot.com",
+    messagingSenderId: "57392000500"
+  };
+  firebase.initializeApp(config);
 
 //---------- VARIABLES ----------
 //---------- VARIABLES ----------
