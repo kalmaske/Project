@@ -3,25 +3,28 @@
 // Initialize Firebase
 
 // Initialize Firebase - My play project
-// var config = {
-//   apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
-//   authDomain: "uncc-project-1-5c704.firebaseapp.com",
-//   databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
-//   projectId: "uncc-project-1-5c704",
-//   storageBucket: "",
-//   messagingSenderId: "1081385197579"
+var config = {
+  apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
+  authDomain: "uncc-project-1-5c704.firebaseapp.com",
+  databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
+  projectId: "uncc-project-1-5c704",
+  storageBucket: "",
+  messagingSenderId: "1081385197579"
 // };
 
 //Initialize Firebase - Team DB
- var config = {
-    apiKey: "AIzaSyCky87hhotEI5ITIYU-aVLsZPcJrjbie7A",
-    authDomain: "project1-acaa9.firebaseapp.com",
-    databaseURL: "https://project1-acaa9.firebaseio.com",
-    projectId: "project1-acaa9",
-    storageBucket: "project1-acaa9.appspot.com",
-    messagingSenderId: "57392000500"
-  };
-  firebase.initializeApp(config);
+// var config = {
+//   apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
+//   authDomain: "awsomeproject-a2f25.firebaseapp.com",
+//   databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
+//   projectId: "awsomeproject-a2f25",
+//   storageBucket: "",
+//   messagingSenderId: "408693856197"
+};
+
+//initialize firebase
+firebase.initializeApp(config);
+
 
 //---------- VARIABLES ----------
 //---------- VARIABLES ----------
@@ -114,7 +117,7 @@ $(document).ready(function() {
           // we know there is only 1 entry so just use index 0 to store unique id
           var charID = response.data.results[0].id;
           var charName = response.data.results[0].name;
-          var path = response.data.results[0].thumbnail.path;
+          var path = response.data.results[0].thumbnail.path.replace("http:", "https:");
           var ext = response.data.results[0].thumbnail.extension;
           var displayImg = path + "/portrait_large." + ext;
 
@@ -252,7 +255,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < comicCount; i++) {
 
-          var path = subresponse.data.results[i].thumbnail.path;
+          var path = subresponse.data.results[i].thumbnail.path.replace("http:", "https:");
           var ext = subresponse.data.results[i].thumbnail.extension;
           var displayImg = path + "/portrait_large." + ext;
           var title = subresponse.data.results[i].title;
@@ -295,7 +298,7 @@ $(document).ready(function() {
     var b = $("<img>");
     b.addClass("newCharImg");
     b.attr("id", snapshot.val().charID);
-    b.attr("src", snapshot.val().thumbnail);
+    b.attr("src", snapshot.val().thumbnail.replace("http:", "https:"));
     b.attr("data-name", snapshot.val().charName);
     b.attr("title", snapshot.val().charName);
     $(".newChar").append(b);
