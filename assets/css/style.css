@@ -13,8 +13,12 @@ h1 {
 .collection-header,
 .collection-with-heade {
     /* background-color: #05121B;*/
-    color: white;
+    color: rgba(147, 42, 35, 0.93);
+    font-family: 'Anton', sans-serif;
+    border-top: gray;
+    border-bottom: gray;
     text-align: center;
+    font-weight: bold;
     font-size: 30px;
     padding: 20px;
 }
