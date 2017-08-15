@@ -82,11 +82,15 @@ function processResponse(root) {
   for (var i = 0; i < items.length; ++i) {
     var item     = items[i];
     var title    = item.title;
-    var pic      = item.galleryURL;
-    var viewitem = item.viewItemURL;
-    if (pic === null || pic === "" || typeof pic === "undefined") {
-      pic = "assets/images/ina.jpg"
+    var picImg      = item.galleryURL;
+    var viewitemImg = item.viewItemURL;
+    if (picImg === null || picImg === "" || typeof picImg === "undefined") {
+      picImg = "assets/images/ina.jpg"
     }
+    
+    var pic = picImg[0].replace("http:", "https:");
+    var viewitem = viewitemImg[0].replace("http:", "https:");
+
     if (null != title && null != viewitem) {
       $("#ebay").append('<tr class="brand-logo"><td>' + '<img src="' + pic + '" border="0">' + '</td>' + 
       '<td><a href="' + viewitem + '" target="_blank">' + title + '</a></td></tr>');

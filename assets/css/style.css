@@ -54,7 +54,7 @@ h1 {
 }
 
 .borders {
-    background-image: url("http://i.imgur.com/64WG7MPr.jpg");
+    background-image: url("https://i.imgur.com/64WG7MPr.jpg");
     background-position: center bottom;
     border: solid 5px black;
     min-height: 780px !important;
@@ -62,7 +62,7 @@ h1 {
 
 .borders2 {
     overflow: hidden;
-    background-image: url("http://i.imgur.com/64WG7MPr.jpg");
+    background-image: url("https://i.imgur.com/64WG7MPr.jpg");
     background-position: right bottom;
     border: solid 5px black;
     min-height: 780px !important;
