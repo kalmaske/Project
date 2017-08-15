@@ -125,6 +125,10 @@ a {
     color: white;
 }
 
+.row .col.s6 {
+    left: none;
+}
+
 
 
 
@@ -204,10 +208,32 @@ a {
 .stores {
     color: white;
     font-family: 'Lemon', cursive;
-
 }
 
 footer {
     background-color: black !important;
     color: white !important;
 }
+
+
+
+@media screen and (max-width: 640px) {
+    .row .col.s6 {
+        width: 95%;
+    }
+    #map {
+        width: 95%
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .row .col.s6 {
+        width: 95%;
+    }
+
+    #map {
+        width: 95%
+    }
+}
+
+@media screen and (max-width:980px) {}
