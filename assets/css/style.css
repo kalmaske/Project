@@ -97,8 +97,6 @@ input[type=text].valid:not(.browser-default) {
     padding: 5px;
 }
 
-
-
 .btn:hover,
 .btn:focus,
 .btn {
