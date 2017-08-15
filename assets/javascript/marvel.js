@@ -181,7 +181,7 @@ $(document).ready(function() {
     hash = md5(ts + privateKey + publicKey);
 
     // create Marvel api query
-    var queryURL = "http://gateway.marvel.com/v1/public/" +
+    var queryURL = "https://gateway.marvel.com/v1/public/" +
       "characters?name=" + character +
       "&apikey=" + publicKey +
       "&ts=" + ts +
