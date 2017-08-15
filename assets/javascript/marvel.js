@@ -3,24 +3,24 @@
 // Initialize Firebase
 
 // Initialize Firebase - My play project
-var config = {
-  apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
-  authDomain: "uncc-project-1-5c704.firebaseapp.com",
-  databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
-  projectId: "uncc-project-1-5c704",
-  storageBucket: "",
-  messagingSenderId: "1081385197579"
-};
-
-// Initialize Firebase - Team DB
 // var config = {
-//   apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
-//   authDomain: "awsomeproject-a2f25.firebaseapp.com",
-//   databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
-//   projectId: "awsomeproject-a2f25",
+//   apiKey: "AIzaSyCydG5tZ2_SBPwbdC8fhShlXFEq70BsamM",
+//   authDomain: "uncc-project-1-5c704.firebaseapp.com",
+//   databaseURL: "https://uncc-project-1-5c704.firebaseio.com",
+//   projectId: "uncc-project-1-5c704",
 //   storageBucket: "",
-//   messagingSenderId: "408693856197"
+//   messagingSenderId: "1081385197579"
 // };
+
+//Initialize Firebase - Team DB
+var config = {
+  apiKey: "AIzaSyCj-NfgaMdmfQg2Ny4QAz6dsETnzIJFGck",
+  authDomain: "awsomeproject-a2f25.firebaseapp.com",
+  databaseURL: "https://awsomeproject-a2f25.firebaseio.com",
+  projectId: "awsomeproject-a2f25",
+  storageBucket: "",
+  messagingSenderId: "408693856197"
+};
 
 //initialize firebase
 firebase.initializeApp(config);
@@ -56,10 +56,10 @@ $(document).ready(function() {
     $("#search-char").val("");
 
   })
-  //This occurs when user enters search criteria for new character
+  //This occurs when user clicks on a carousel item
   $(".carousel-item").on("click", function() {
 
-    event.preventDefault();
+    //event.preventDefault();
 
     //check to see if active class was clicked
     var charClass = ($(this).attr("class").split(' ')[1]);
@@ -69,6 +69,11 @@ $(document).ready(function() {
       var clickedID = $(this).attr("id");
       var clickedName = $(this).attr("data-name");
       var clickedIndex = $(this).attr("data-index")
+
+      $("#ebay").empty();
+      database.ref("lastebay").set({
+         title:null
+      })
 
       database.ref("comicsCharacter").set({
         id: clickedID,
@@ -88,7 +93,7 @@ $(document).ready(function() {
 
   //----------  ADD A CHARACTER
   //$(document).on("click", ".addChar", function() {
-  $(".addChar").on("click", function() {
+  $(".addChar").on("click", function(event) {
 
     event.preventDefault();
 
@@ -145,11 +150,17 @@ $(document).ready(function() {
   //display comic books when a user clicks on a newly added character
   $(document).on("click", ".newCharImg", function() {
 
-    event.preventDefault();
+    //event.preventDefault();
 
     //check to see if active class was clicked
     var charID = $(this).attr("id");
     var charName = $(this).attr("data-name")
+
+
+    $("#ebay").empty();
+    database.ref("lastebay").set({
+         title:null
+     })
 
     database.ref("comicsCharacter").set({
       id: charID,
@@ -217,7 +228,6 @@ $(document).ready(function() {
       var loopCount = comicCount;
 
       $(".comics").empty();
-      $("#ebay").empty();
 
       if (comicCount === 0) {
         // console.log("ERROR:  NO COMICS AVAILABLE")
@@ -289,6 +299,7 @@ $(document).ready(function() {
     b.attr("id", snapshot.val().charID);
     b.attr("src", snapshot.val().thumbnail);
     b.attr("data-name", snapshot.val().charName);
+    b.attr("title", snapshot.val().charName);
     $(".newChar").append(b);
   })
 
