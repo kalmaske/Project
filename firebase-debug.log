@@ -1,0 +1,24 @@
+[debug] [2017-08-15T16:03:37.462Z] ----------------------------------------------------------------------
+[debug] [2017-08-15T16:03:37.462Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\liket\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-08-15T16:03:37.462Z] CLI Version:   3.9.2
+[debug] [2017-08-15T16:03:37.462Z] Platform:      win32
+[debug] [2017-08-15T16:03:37.462Z] Node Version:  v6.11.0
+[debug] [2017-08-15T16:03:37.462Z] Time:          Tue Aug 15 2017 12:03:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-15T16:03:37.462Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-15T16:03:37.478Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-15T16:03:37.478Z] > authorizing via signed-in user
+[debug] [2017-08-15T16:03:37.478Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/awsomeproject-a2f25  
+ Tue Aug 15 2017 12:03:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-15T16:03:38.240Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-15T16:03:38.244Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/awsomeproject-a2f25/tokens  
+ Tue Aug 15 2017 12:03:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-15T16:03:38.645Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'awsomeproject-a2f25'...
+[info] 
+[info] i  deploying database, hosting
+[info] +  database: rules ready to deploy.
+[info] i  hosting: preparing . directory for upload...
+[debug] [2017-08-15T16:03:41.750Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/awsomeproject-a2f25/uploads/-KracjtV7lhEvJo2WRQe?fileCount=231&message=  
+ Tue Aug 15 2017 12:03:41 GMT-0400 (Eastern Daylight Time)
