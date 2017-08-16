@@ -23,6 +23,9 @@ h1
     font-size: 80px;
     padding: 20px;
 }
+p{
+    color:white;
+}
 
 .nav-wrapper {
     /*  background-color: #05121B;*/
