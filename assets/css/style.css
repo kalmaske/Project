@@ -13,8 +13,7 @@ h1 {
 
 .collection-header,
 .collection-with-heade,
-h1
-{
+h1 {
     /* background-color: #05121B;*/
     color: rgba(147, 42, 35, 0.93);
     font-family: 'Anton', sans-serif;
@@ -23,8 +22,9 @@ h1
     font-size: 80px;
     padding: 20px;
 }
-p{
-    color:white;
+
+p {
+    color: white;
 }
 
 .nav-wrapper {
